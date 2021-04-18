@@ -12,14 +12,18 @@
         android:supportsRtl="true"
         android:name=".ui.main.MyApp"
         android:theme="@style/Theme.DesafioGITApp">
-        <activity android:name=".MainActivity">
+        <activity
+            android:name=".MainActivity"
+            android:configChanges="screenLayout|orientation|screenSize">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.details.DetailsActivity">
+        <activity
+            android:name=".ui.details.DetailsActivity"
+            android:configChanges="screenLayout|orientation|screenSize">
         </activity>
     </application>
 
