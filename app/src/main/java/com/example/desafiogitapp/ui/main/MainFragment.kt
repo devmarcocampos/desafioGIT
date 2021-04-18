@@ -1,5 +1,6 @@
 package com.example.desafiogitapp.ui.main
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -11,6 +12,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.desafiogitapp.R
 import com.example.desafiogitapp.data.model.Items
+import com.example.desafiogitapp.ui.details.DetailsActivity
 import org.koin.android.viewmodel.ext.android.viewModel
 
 class MainFragment : Fragment(), OnRepositorieClickListener {
@@ -120,7 +122,11 @@ class MainFragment : Fragment(), OnRepositorieClickListener {
     }
 
     override fun onRepositorieClicked(repositorie: Items) {
-        Toast.makeText(activity, repositorie.name, Toast.LENGTH_LONG).show()
+//        Toast.makeText(activity, repositorie.name, Toast.LENGTH_LONG).show()
+
+        val intent = Intent(activity, DetailsActivity::class.java)
+        intent.putExtra("repositorieSelected", repositorie)
+        startActivity(intent)
     }
 
 }
