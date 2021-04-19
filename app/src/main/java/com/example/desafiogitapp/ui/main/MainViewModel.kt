@@ -20,7 +20,7 @@ class MainViewModel(
                 val response = mainRepository.getRepositories(page)
                 _states.value = MainViewState.ShowRepositories(response.items)
             } catch (exception: Exception) {
-                _states.value = MainViewState.ShowError(exception.toString())
+                _states.value = MainViewState.ShowError("erro")
             }
         }
     }
