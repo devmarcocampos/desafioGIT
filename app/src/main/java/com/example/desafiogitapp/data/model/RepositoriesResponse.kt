@@ -5,10 +5,10 @@ import java.io.Serializable
 
 data class RepositoriesResponse (
     @SerializedName("items")
-    var items: ArrayList<Items>
+    var repositories: ArrayList<Repository>
 )
 
-data class Items(
+data class Repository(
     @SerializedName("id")
     var id: Int,
     @SerializedName("name")

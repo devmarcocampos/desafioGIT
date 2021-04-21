@@ -11,11 +11,11 @@ import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.desafiogitapp.R
-import com.example.desafiogitapp.data.model.Items
+import com.example.desafiogitapp.data.model.Repository
 import com.example.desafiogitapp.ui.details.DetailsActivity
 import org.koin.android.viewmodel.ext.android.viewModel
 
-class MainFragment : Fragment(), OnRepositorieClickListener {
+class MainFragment : Fragment(), OnRepositoryClickListener {
 
     companion object {
         fun newInstance() = MainFragment()
@@ -23,7 +23,7 @@ class MainFragment : Fragment(), OnRepositorieClickListener {
 
     private val mainViewModel: MainViewModel by viewModel()
 
-    private var repositoriesList =  ArrayList<Items>()
+    private var repositoriesList =  ArrayList<Repository>()
 
     private var contPage = 0
 
@@ -71,7 +71,7 @@ class MainFragment : Fragment(), OnRepositorieClickListener {
         })
     }
 
-    private fun showRepositories(repositories: ArrayList<Items>) {
+    private fun showRepositories(repositories: ArrayList<Repository>) {
         repositoriesList.addAll(repositories)
 
         myRepositoriesAdapter = RecyclerViewRepositoiresAdapter(repositoriesList, this)
@@ -94,9 +94,9 @@ class MainFragment : Fragment(), OnRepositorieClickListener {
         Toast.makeText(activity, error, Toast.LENGTH_LONG).show()
     }
 
-    override fun onRepositorieClicked(repositorie: Items) {
+    override fun onRepositoryClicked(repository: Repository) {
         val intent = Intent(activity, DetailsActivity::class.java)
-        intent.putExtra("repositorieSelected", repositorie)
+        intent.putExtra("repositorySelected", repository)
         startActivity(intent)
     }
 }

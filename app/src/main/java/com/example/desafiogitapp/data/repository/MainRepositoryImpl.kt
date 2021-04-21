@@ -10,6 +10,11 @@ class MainRepositoryImpl(
 ) : MainRepository {
     override suspend fun getRepositories(page: Int): RepositoriesResponse =
         withContext(Dispatchers.IO) {
-            api.getRepositories("language:kotlin", "stars", page.toString())
+            api.getRepositories(LANGUAGE_KOTLIN, STARS, page.toString())
         }
+
+    companion object {
+        const val LANGUAGE_KOTLIN = "language:kotlin"
+        const val STARS = "stars"
+    }
 }

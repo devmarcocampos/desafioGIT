@@ -8,15 +8,15 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import com.example.desafiogitapp.R
-import com.example.desafiogitapp.data.model.Items
+import com.example.desafiogitapp.data.model.Repository
 import com.squareup.picasso.Picasso
 
 class DetailsFragment(
-    private val repositorie: Items
+    private val repository: Repository
 ) : Fragment() {
 
     companion object {
-        fun newInstance(repositorie: Items) = DetailsFragment(repositorie)
+        fun newInstance(repository: Repository) = DetailsFragment(repository)
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
@@ -33,14 +33,14 @@ class DetailsFragment(
     private fun showDetails() {
         val ownerImageView = view?.findViewById<ImageView>(R.id.ownerImageView)
         val ownerNameTextView = view?.findViewById<TextView>(R.id.ownerNameTextView)
-        val repositorieNameTextView = view?.findViewById<TextView>(R.id.repositorieNameTextView)
-        val repositorieStarsTextView = view?.findViewById<TextView>(R.id.repositorieStarsTextView)
-        val repositorieForksTextView = view?.findViewById<TextView>(R.id.repositorieForksTextView)
+        val repositoryNameTextView = view?.findViewById<TextView>(R.id.repositoryNameTextView)
+        val repositoryStarsTextView = view?.findViewById<TextView>(R.id.repositoryStarsTextView)
+        val repositoryForksTextView = view?.findViewById<TextView>(R.id.repositoryForksTextView)
 
-        ownerNameTextView?.text = repositorie.owner.login
-        repositorieNameTextView?.text = repositorie.name
-        repositorieStarsTextView?.text = repositorie.stargazersCount.toString()
-        repositorieForksTextView?.text = repositorie.forks.toString()
+        ownerNameTextView?.text = repository.owner.login
+        repositoryNameTextView?.text = repository.name
+        repositoryStarsTextView?.text = repository.stargazersCount.toString()
+        repositoryForksTextView?.text = repository.forks.toString()
 
         val picasso = activity?.let {
             Picasso.Builder(it).listener { _, _, exception ->
@@ -51,7 +51,7 @@ class DetailsFragment(
         }
 
         picasso?.let { pic ->
-            pic.load(repositorie.owner.avatar_url)
+            pic.load(repository.owner.avatar_url)
                     .fit().centerCrop()
                     .into(ownerImageView)
         }

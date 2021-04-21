@@ -1,7 +1,7 @@
 package com.example.desafiogitapp.ui.main
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
-import com.example.desafiogitapp.data.model.Items
+import com.example.desafiogitapp.data.model.Repository
 import com.example.desafiogitapp.data.model.Owner
 import com.example.desafiogitapp.data.model.RepositoriesResponse
 import com.example.desafiogitapp.data.repository.MainRepository
@@ -39,7 +39,7 @@ class MainViewModelTest {
 
         viewModel.getRepositories(1)
 
-        Assert.assertEquals(viewModel.states.value, MainViewState.ShowRepositories(getRepositoriesResponse().items))
+        Assert.assertEquals(viewModel.states.value, MainViewState.ShowRepositories(getRepositoriesResponse().repositories))
     }
 
     @Test
@@ -56,8 +56,8 @@ class MainViewModelTest {
     private fun getRepositoriesResponse() : RepositoriesResponse =
         RepositoriesResponse(arrayListOf(getItems()))
 
-    private fun getItems() : Items =
-        Items(1, "itemName", 1, 1, getOwner())
+    private fun getItems() : Repository =
+        Repository(1, "itemName", 1, 1, getOwner())
 
     private fun getOwner() : Owner =
         Owner(1, "loginOwnser", "avatarUrlOwner")

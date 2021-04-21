@@ -46,7 +46,7 @@
             app:layout_constraintEnd_toEndOf="parent" />
 
         <TextView
-            android:id="@+id/repositorieTitleTextView"
+            android:id="@+id/repositoryTitleTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="52dp"
@@ -68,10 +68,10 @@
             android:textColor="#FF6959"
             android:text="Nome:"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/repositorieTitleTextView" />
+            app:layout_constraintTop_toBottomOf="@id/repositoryTitleTextView" />
 
         <TextView
-            android:id="@+id/repositorieNameTextView"
+            android:id="@+id/repositoryNameTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="4dp"
@@ -91,7 +91,7 @@
             app:layout_constraintTop_toBottomOf="@+id/nameLabelTextView" />
 
         <TextView
-            android:id="@+id/repositorieStarsTextView"
+            android:id="@+id/repositoryStarsTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="4dp"
@@ -111,7 +111,7 @@
             app:layout_constraintTop_toBottomOf="@+id/starsLabelTextView" />
 
         <TextView
-            android:id="@+id/repositorieForksTextView"
+            android:id="@+id/repositoryForksTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="4dp"

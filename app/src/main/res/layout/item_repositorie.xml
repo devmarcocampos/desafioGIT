@@ -60,7 +60,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/nameRepositorieTextView"
+            android:id="@+id/nameRepositoryTextView"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             tools:text="nome do repositorio"
