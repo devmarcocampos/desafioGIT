@@ -7,7 +7,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import android.widget.Toast
 import com.example.desafiogitapp.R
 import com.example.desafiogitapp.data.model.Items
 import com.squareup.picasso.Picasso
@@ -27,8 +26,6 @@ class DetailsFragment(
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-
-//        Toast.makeText(activity, "Detalhes Fragment -" + repositorie.name, Toast.LENGTH_LONG).show()
 
         showDetails()
     }

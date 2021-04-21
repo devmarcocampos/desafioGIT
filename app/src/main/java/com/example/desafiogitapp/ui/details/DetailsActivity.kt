@@ -20,11 +20,5 @@ class DetailsActivity : AppCompatActivity() {
                     .commitNow()
             }
         }
-
-//        if (savedInstanceState == null) {
-//            supportFragmentManager.beginTransaction()
-//                    .replace(R.id.container, DetailsFragment.newInstance(repositorieSelected))
-//                    .commitNow()
-//        }
     }
 }

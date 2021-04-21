@@ -27,7 +27,4 @@ class MyApp: Application() {
             modules(listOf(retrofitModule, apiModule, mainRepositoryModule, mainViewModelModule))
         }
     }
-
-//    fun gContext(): MyApp? =
-//            instance
 }

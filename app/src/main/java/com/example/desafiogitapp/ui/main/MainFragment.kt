@@ -49,9 +49,6 @@ class MainFragment : Fragment(), OnRepositorieClickListener {
 
         configureRecyclerView()
         getRepositories()
-
-//        mainViewModel.getRepositories(1)
-
     }
 
     private fun configureRecyclerView() {
@@ -75,8 +72,6 @@ class MainFragment : Fragment(), OnRepositorieClickListener {
     }
 
     private fun showRepositories(repositories: ArrayList<Items>) {
-//        Toast.makeText(activity, repositories[1].name, Toast.LENGTH_LONG).show()
-
         repositoriesList.addAll(repositories)
 
         myRepositoriesAdapter = RecyclerViewRepositoiresAdapter(repositoriesList, this)
@@ -88,28 +83,6 @@ class MainFragment : Fragment(), OnRepositorieClickListener {
         }
 
         firstRequest = false
-
-
-//        val repositoriesRecyclerView = view?.findViewById<RecyclerView>(R.id.repositoriesRecyclerView)
-
-
-
-//        repositoriesRecyclerView?.let { recyclerView ->
-//            with(recyclerView) {
-//                layoutManager = LinearLayoutManager(activity)
-//                adapter = repositoriesAdapter
-//                setHasFixedSize(false)
-//            }
-//        }
-//
-//        repositoriesRecyclerView?.addOnScrollListener(object : RecyclerView.OnScrollListener() {
-//            override fun onScrollStateChanged(recyclerView: RecyclerView, newState: Int) {
-//                super.onScrollStateChanged(recyclerView, newState)
-//                if (!recyclerView.canScrollVertically(1) && newState == RecyclerView.SCROLL_STATE_IDLE) {
-//                    getRepositories()
-//                }
-//            }
-//        })
     }
 
     private fun getRepositories() {
@@ -122,11 +95,8 @@ class MainFragment : Fragment(), OnRepositorieClickListener {
     }
 
     override fun onRepositorieClicked(repositorie: Items) {
-//        Toast.makeText(activity, repositorie.name, Toast.LENGTH_LONG).show()
-
         val intent = Intent(activity, DetailsActivity::class.java)
         intent.putExtra("repositorieSelected", repositorie)
         startActivity(intent)
     }
-
 }

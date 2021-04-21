@@ -35,6 +35,7 @@ class RecyclerViewRepositoiresAdapter(
             }.build()
 
             picasso.load(repositorie.owner.avatar_url)
+                .noFade()
                 .fit().centerCrop()
                 .into(ownerImageView)
         }
