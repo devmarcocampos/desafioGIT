@@ -7,9 +7,9 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@drawable/ic_git"
+        android:icon="@drawable/ic_repository"
         android:label="@string/app_name"
-        android:roundIcon="@drawable/ic_git"
+        android:roundIcon="@drawable/ic_repository"
         android:supportsRtl="true"
         android:name=".ui.main.MyApp"
         android:theme="@style/Theme.DesafioGITApp">
