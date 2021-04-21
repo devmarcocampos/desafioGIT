@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ProgressBar
 import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -23,14 +24,15 @@ class MainFragment : Fragment(), OnRepositoryClickListener {
 
     private val mainViewModel: MainViewModel by viewModel()
 
-    private var repositoriesList =  ArrayList<Repository>()
-
     private var contPage = 0
-
     private var firstRequest = true
 
-    private var myRecyclerView: RecyclerView? = null
-    lateinit var myRepositoriesAdapter: RecyclerViewRepositoiresAdapter
+    private var repositoriesList =  ArrayList<Repository>()
+
+    lateinit var repositoriesAdapter: RecyclerViewRepositoiresAdapter
+
+    private val repositoriesRecyclerView by lazy { view?.findViewById<RecyclerView>(R.id.repositoriesRecyclerView) }
+    private val progressBar by lazy { view?.findViewById<ProgressBar>(R.id.progressBar) }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View {
@@ -52,16 +54,15 @@ class MainFragment : Fragment(), OnRepositoryClickListener {
     }
 
     private fun configureRecyclerView() {
-        myRecyclerView = view?.findViewById<RecyclerView>(R.id.repositoriesRecyclerView)
-
-        myRecyclerView?.let { recyclerView ->
+        repositoriesRecyclerView?.let { recyclerView ->
             with(recyclerView) {
                 layoutManager = LinearLayoutManager(activity)
                 setHasFixedSize(false)
+                visibility = View.VISIBLE
             }
         }
 
-        myRecyclerView?.addOnScrollListener(object : RecyclerView.OnScrollListener() {
+        repositoriesRecyclerView?.addOnScrollListener(object : RecyclerView.OnScrollListener() {
             override fun onScrollStateChanged(recyclerView: RecyclerView, newState: Int) {
                 super.onScrollStateChanged(recyclerView, newState)
                 if (!recyclerView.canScrollVertically(1) && newState == RecyclerView.SCROLL_STATE_IDLE) {
@@ -74,18 +75,22 @@ class MainFragment : Fragment(), OnRepositoryClickListener {
     private fun showRepositories(repositories: ArrayList<Repository>) {
         repositoriesList.addAll(repositories)
 
-        myRepositoriesAdapter = RecyclerViewRepositoiresAdapter(repositoriesList, this)
+        repositoriesAdapter = RecyclerViewRepositoiresAdapter(repositoriesList, this)
 
-        myRecyclerView?.adapter = myRepositoriesAdapter
+        repositoriesRecyclerView?.adapter = repositoriesAdapter
 
         if (!firstRequest) {
-            myRecyclerView?.scrollToPosition(repositoriesList.size - repositories.size)
+            repositoriesRecyclerView?.scrollToPosition(repositoriesList.size - repositories.size)
         }
 
         firstRequest = false
+
+        progressBar?.visibility = View.GONE
     }
 
     private fun getRepositories() {
+        progressBar?.visibility = View.VISIBLE
+
         contPage += 1
         mainViewModel.getRepositories(contPage)
     }
