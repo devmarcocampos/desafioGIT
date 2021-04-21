@@ -2,7 +2,7 @@
 <androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/main"
-    android:background="#26282f"
+    android:background="@color/default_26282f"
     android:fillViewport="true"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
@@ -10,26 +10,26 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginBottom="22dp">
+        android:layout_marginBottom="@dimen/default_22dp">
 
         <TextView
             android:id="@+id/ownerTitleTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="42dp"
-            android:textSize="22sp"
+            android:layout_marginTop="@dimen/default_42dp"
+            android:textSize="@dimen/default_22sp"
             android:textStyle="italic"
-            android:textColor="#FF6959"
-            android:text="Dono"
+            android:textColor="@color/default_FF6959"
+            android:text="@string/owner"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/ownerImageView"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_marginTop="12dp"
+            android:layout_width="@dimen/default_100dp"
+            android:layout_height="@dimen/default_100dp"
+            android:layout_marginTop="@dimen/default_12dp"
             app:shapeAppearanceOverlay="@style/ImageView.Round"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -39,7 +39,7 @@
             android:id="@+id/ownerNameTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
+            android:layout_marginTop="@dimen/default_4dp"
             android:textColor="@color/white"
             app:layout_constraintTop_toBottomOf="@+id/ownerImageView"
             app:layout_constraintStart_toStartOf="parent"
@@ -49,11 +49,11 @@
             android:id="@+id/repositoryTitleTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="52dp"
-            android:textSize="22sp"
+            android:layout_marginTop="@dimen/default_52dp"
+            android:textSize="@dimen/default_22sp"
             android:textStyle="italic"
-            android:textColor="#FF6959"
-            android:text="Repositório"
+            android:textColor="@color/default_FF6959"
+            android:text="@string/repository"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/ownerNameTextView" />
@@ -62,11 +62,11 @@
             android:id="@+id/nameLabelTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="22dp"
-            android:layout_marginTop="12dp"
+            android:layout_marginStart="@dimen/default_22dp"
+            android:layout_marginTop="@dimen/default_12dp"
             android:textStyle="bold"
-            android:textColor="#FF6959"
-            android:text="Nome:"
+            android:textColor="@color/default_FF6959"
+            android:text="@string/name"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/repositoryTitleTextView" />
 
@@ -74,7 +74,7 @@
             android:id="@+id/repositoryNameTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="4dp"
+            android:layout_marginStart="@dimen/default_4dp"
             android:textColor="@color/white"
             app:layout_constraintStart_toEndOf="@+id/nameLabelTextView"
             app:layout_constraintTop_toTopOf="@+id/nameLabelTextView" />
@@ -83,10 +83,10 @@
             android:id="@+id/starsLabelTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="@dimen/default_8dp"
             android:textStyle="bold"
-            android:textColor="#FF6959"
-            android:text="Estrelas:"
+            android:textColor="@color/default_FF6959"
+            android:text="@string/stars"
             app:layout_constraintStart_toStartOf="@+id/nameLabelTextView"
             app:layout_constraintTop_toBottomOf="@+id/nameLabelTextView" />
 
@@ -94,7 +94,7 @@
             android:id="@+id/repositoryStarsTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="4dp"
+            android:layout_marginStart="@dimen/default_4dp"
             android:textColor="@color/white"
             app:layout_constraintStart_toEndOf="@+id/starsLabelTextView"
             app:layout_constraintTop_toTopOf="@+id/starsLabelTextView" />
@@ -103,10 +103,10 @@
             android:id="@+id/forksLabelTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="@dimen/default_8dp"
             android:textStyle="bold"
-            android:textColor="#FF6959"
-            android:text="Forks:"
+            android:textColor="@color/default_FF6959"
+            android:text="@string/forks"
             app:layout_constraintStart_toStartOf="@+id/starsLabelTextView"
             app:layout_constraintTop_toBottomOf="@+id/starsLabelTextView" />
 
@@ -114,7 +114,7 @@
             android:id="@+id/repositoryForksTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="4dp"
+            android:layout_marginStart="@dimen/default_4dp"
             android:textColor="@color/white"
             app:layout_constraintStart_toEndOf="@+id/forksLabelTextView"
             app:layout_constraintTop_toTopOf="@+id/forksLabelTextView" />

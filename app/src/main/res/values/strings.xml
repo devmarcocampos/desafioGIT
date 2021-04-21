@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">DesafioGITApp</string>
+    <string name="owner">Dono(a)</string>
+    <string name="repository">Repositório</string>
+    <string name="name">Nome:</string>
+    <string name="stars">Estrelas:</string>
+    <string name="forks">Forks:</string>
 </resources>

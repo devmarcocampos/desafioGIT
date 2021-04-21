@@ -42,7 +42,7 @@ class RecyclerViewRepositoiresAdapter(
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyHolder =
-        MyHolder(LayoutInflater.from(parent.context).inflate(R.layout.item_repositorie, parent, false))
+        MyHolder(LayoutInflater.from(parent.context).inflate(R.layout.item_repository, parent, false))
 
     override fun getItemCount(): Int = repositories.size
 

@@ -8,7 +8,7 @@
     android:layout_margin="10dp"
     app:cardCornerRadius="10dp"
     android:layout_marginBottom="20dp"
-    android:backgroundTint="#FF6959"
+    android:backgroundTint="@color/default_FF6959"
     android:id="@+id/cardView"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
@@ -19,16 +19,16 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/ownerConstraintLayout"
-            android:layout_width="125dp"
+            android:layout_width="@dimen/default_125dp"
             android:layout_height="wrap_content"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" >
 
             <com.google.android.material.imageview.ShapeableImageView
                 android:id="@+id/ownerImageView"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_marginTop="8dp"
+                android:layout_width="@dimen/default_50dp"
+                android:layout_height="@dimen/default_50dp"
+                android:layout_marginTop="@dimen/default_8dp"
                 app:shapeAppearanceOverlay="@style/ImageView.Round"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -41,8 +41,8 @@
                 android:gravity="center"
                 tools:text="nome do autor"
                 android:textColor="@color/white"
-                android:layout_marginTop="4dp"
-                android:layout_marginBottom="8dp"
+                android:layout_marginTop="@dimen/default_4dp"
+                android:layout_marginBottom="@dimen/default_8dp"
                 app:layout_constraintTop_toBottomOf="@+id/ownerImageView"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -55,7 +55,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/ic_github"
-            android:layout_marginTop="4dp"
+            android:layout_marginTop="@dimen/default_4dp"
             app:layout_constraintStart_toEndOf="@+id/ownerConstraintLayout"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -65,7 +65,7 @@
             android:layout_height="wrap_content"
             tools:text="nome do repositorio"
             android:textColor="@color/white"
-            android:layout_marginStart="4dp"
+            android:layout_marginStart="@dimen/default_4dp"
             app:layout_constraintStart_toEndOf="@+id/iconGit"
             app:layout_constraintTop_toTopOf="@+id/iconGit"
             app:layout_constraintBottom_toBottomOf="@+id/iconGit"
@@ -76,7 +76,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/ic_star"
-            android:layout_marginTop="2dp"
+            android:layout_marginTop="@dimen/default_2dp"
             app:layout_constraintStart_toEndOf="@+id/ownerConstraintLayout"
             app:layout_constraintTop_toBottomOf="@+id/iconGit" />
 
@@ -86,7 +86,7 @@
             android:layout_height="wrap_content"
             tools:text="132456"
             android:textColor="@color/white"
-            android:layout_marginStart="4dp"
+            android:layout_marginStart="@dimen/default_4dp"
             app:layout_constraintTop_toTopOf="@+id/iconStar"
             app:layout_constraintBottom_toBottomOf="@+id/iconStar"
             app:layout_constraintStart_toEndOf="@+id/iconStar" />
@@ -96,7 +96,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/ic_source_branch"
-            android:layout_marginTop="2dp"
+            android:layout_marginTop="@dimen/default_2dp"
             app:layout_constraintStart_toEndOf="@+id/ownerConstraintLayout"
             app:layout_constraintTop_toBottomOf="@+id/iconStar" />
 
@@ -106,7 +106,7 @@
             android:layout_height="wrap_content"
             tools:text="1315646"
             android:textColor="@color/white"
-            android:layout_marginStart="4dp"
+            android:layout_marginStart="@dimen/default_4dp"
             app:layout_constraintTop_toTopOf="@+id/iconFork"
             app:layout_constraintBottom_toBottomOf="@+id/iconFork"
             app:layout_constraintStart_toEndOf="@+id/iconFork" />
